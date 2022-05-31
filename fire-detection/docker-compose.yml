@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+  app-fire-detection:
+    image: app-fire-detection
+    container_name: app-fire-detection
+    build:
+      context: .
+    command: python3 server.py
+    restart: always 
+    ports: 
+      - 8001:8001
+    volumes:
+      - .:/app
+    # networks:
+    #   - testModelNet
+
+# networks:
+#   testModelNet:
