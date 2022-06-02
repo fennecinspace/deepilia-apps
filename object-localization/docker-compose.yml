@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  app-excavator-localization:
+    image: app-excavator-localization
+    container_name: app-excavator-localization
+    build:
+      context: .
+    command: python3 server.py
+    restart: always 
+    ports: 
+      - 8001:8001
+    volumes:
+      - .:/app
